@@ -18,6 +18,30 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\UserController;
+
+Route::get('/product/create', [ProductController::class, 'create']);
+Route::post('/product/store', [ProductController::class, 'store'])->name('product.store');
+
+
+//route servies
+Route::get('/customer/service/create',[ServicesController::class, 'create']);
+Route::post('/customer/service/store', [ServicesController::class, 'store'])->name('service.store');
+//route services sotre in database
+
+//route user form
+Route::get('users/services/create',[UserController::class, 'create']);
+Route::post('users/services/store',[UserController::class,'store'])->name('user.store');
+
+
+
+
+
+
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
