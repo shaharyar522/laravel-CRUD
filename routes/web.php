@@ -19,7 +19,9 @@ Route::get('/', function () {
 });
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\User_DataController;
 use App\Http\Controllers\ServicesController;
+
 use App\Http\Controllers\UserController;
 
 Route::get('/product/create', [ProductController::class, 'create']);
@@ -32,8 +34,16 @@ Route::post('/customer/service/store', [ServicesController::class, 'store'])->na
 //route services sotre in database
 
 //route user form
-Route::get('users/services/create',[UserController::class, 'create']);
+Route::get('/users/services/create',[UserController::class, 'create']);
 Route::post('users/services/store',[UserController::class,'store'])->name('user.store');
+
+
+Route::get('/user_data/create',[User_DataController::class, 'create']);
+Route::get('/user/sotre',[User_DataController::class,'store'])->name('user_data.store');
+
+
+
+
 
 
 
