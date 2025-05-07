@@ -1,0 +1,15 @@
+ public function create()
+    {
+        return view('services.Student');
+    }
+    public function store(Request $request){
+        $studentinfo = new StudentInfo();
+        $studentinfo->name  = $request->name;
+        $studentinfo->father_name = $request->father_name;
+        $studentinfo->roll_number = $request->roll_number;
+        $studentinfo->cgpa = $request->cgpa;
+        $studentinfo->marks = $request->marks;
+        $studentinfo->save();
+
+
+    }

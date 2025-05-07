@@ -1,0 +1,6 @@
+ $table->string('name');
+            $table->string('father_name');
+            $table->string('roll_number');
+            $table->string('cgpa');
+            $table->integer('marks');
+            $table->timestamps();

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\FomrController;
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,7 +23,8 @@ Route::get('/', function () {
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\User_DataController;
 use App\Http\Controllers\ServicesController;
-
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\StudentInfoController;
 use App\Http\Controllers\UserController;
 
 Route::get('/product/create', [ProductController::class, 'create']);
@@ -40,6 +43,28 @@ Route::post('users/services/store',[UserController::class,'store'])->name('user.
 
 Route::get('/user_data/create',[User_DataController::class, 'create']);
 Route::get('/user/sotre',[User_DataController::class,'store'])->name('user_data.store');
+
+
+//Route
+Route::get('/form/create',[FormController::class,'create']);
+Route::post('/form/store',[FormController::class,'store'])->name('store.form');
+
+Route::get('/form/index',[FormController::class,'index'])->name('form.index');
+Route::get('/form/edit/{id}',[FormController::class,'edit'])->name('form.edit');
+Route::post('/form/update/{id}',[FormController::class,'update'])->name('form.update');
+
+
+Route::get('/student/create',[StudentController::class,'create']);
+Route::post('/student/store',[StudentController::class,'store'])->name('store_stuend_data');
+
+
+
+
+
+
+
+
+
 
 
 
