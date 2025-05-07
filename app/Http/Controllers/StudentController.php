@@ -12,7 +12,9 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        $students = Student::all();
+        
+        return view('services.student_index',get_defined_vars());
     }
 
     /**
@@ -51,17 +53,24 @@ class StudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Student $student)
+    public function edit($id)
     {
-        //
+        $student = Student::findOrFail($id);
+        return view('services.student_edit',get_defined_vars());
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Student $student)
+    public function update(Request $request,$id)
     {
-        //
+        $student = Student::findOrFail($id);
+        $student->name = $request->name;
+        $student->father_name = $request->father_name;
+        $student->roll_number = $request->roll_number;
+        $student->cgpa = $request->cgpa;
+        $student->marks = $request->marks;
+        $student->save();
     }
 
     /**

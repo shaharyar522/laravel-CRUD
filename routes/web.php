@@ -54,8 +54,20 @@ Route::get('/form/edit/{id}',[FormController::class,'edit'])->name('form.edit');
 Route::post('/form/update/{id}',[FormController::class,'update'])->name('form.update');
 
 
+
+//student ka leuey hian 
+
 Route::get('/student/create',[StudentController::class,'create']);
 Route::post('/student/store',[StudentController::class,'store'])->name('store_stuend_data');
+
+//data ko ohtyahian 
+Route::get('/student/index',[StudentController::class,'index'])->name('student.index');
+Route::get('/student/edit/{id}',[StudentController::class,'edit'])->name('student.edit');
+Route::post('/student/update/{id}',[StudentController::class,'update'])->name('student.update');
+
+
+
+
 
 
 

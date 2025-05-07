@@ -13,12 +13,22 @@
                 <th>Name</th>
                 <th>Father Name</th>
                 <th>Roll Number</th>
-                <th>Cgpa</th>
-                <th>marks</th>
+                <th>CGPA</th>
+                <th>Marks</th>
             </tr>
         </thead>
         <tbody>
-            
+            @foreach ($students as $student)
+                <tr>
+                    <td>{{ $student->name }}</td>
+                    <td>{{ $student->father_name }}</td>
+                    <td>{{ $student->roll_number }}</td>
+                    <td>{{ $student->cgpa }}</td>
+                    <td>{{ $student->marks }}</td>
+                    <td> <a href="{{ route('student.edit',$student->id)}}">Edit buttun</a>
+                    </td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
 </body>
